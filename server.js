@@ -9,8 +9,8 @@ const logger = require('morgan');
 
 const testJwtRouter = require('./controllers/test-jwt.js');
 const authRouter = require('./controllers/auth.js');
-const userRouter = require('./controllers/users.js')
-
+const userRouter = require('./controllers/users.js');
+const hootsRouter = require('./controllers/hoots.js');
 
 // MIDDLEWARE
 
@@ -25,7 +25,8 @@ app.use(express.json());
 app.use(logger('dev'));
 app.use('/auth', authRouter);
 app.use('/test-jwt', testJwtRouter);
-app.use('/users', userRouter)
+app.use('/users', userRouter);
+app.use('/hoots', hootsRouter);
 
 
 // Routes go here
